@@ -1,12 +1,12 @@
 import React from "react";
 import "./App.css";
 
-import Homepage from "./pages/homepage/homepage.jsx";
+import Directory from "./components/directory/directory";
 
 function App() {
   return (
     <div className='App'>
-      <Homepage />
+      <Directory />
     </div>
   );
 }
