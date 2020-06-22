@@ -9,4 +9,7 @@ class ShopPage extends React.Component {
       collections: SHOP_DATA,
     };
   }
+  render() {
+    return <div>Shop Page</div>;
+  }
 }
