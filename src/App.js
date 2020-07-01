@@ -8,12 +8,18 @@ import Header from "./components/header/header.component";
 import { auth } from './firebase/firebase.utils';
 
 class App extends React.Component {
-  constructur() {
+  constructor() {
     super();
 
     this.state = {
       currentUser: null
     }
+  }
+
+  componentDidMount() {
+    auth.onAuthStateChanged(user => {
+      this.setState({ currentUser: user });
+    })
   }
 
   render() {
