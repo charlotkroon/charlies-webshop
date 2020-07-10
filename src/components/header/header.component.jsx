@@ -1,14 +1,15 @@
 //libraries and dependecies
 import React from 'react';
-import { auth } from '../../firebase/firebase.utils.js';
-import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
+import {auth} from '../../firebase/firebase.utils.js';
+import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
 //components
 import './header.styling.scss';
-import { ReactComponent as Logo } from '../../assets/crown.svg';
+import {ReactComponent as Logo} from '../../assets/crown.svg';
 import CartIcon from '../cart-icon/cart-icon.component.jsx';
+import CartDropdown from '../cart-dropdown/cart-dropdown.component.jsx';
 
-const Header = ({ currentUser }) => (
+const Header = ({currentUser}) => (
 	<div className='header'>
 		<Link className='logo-container' to='/'>
 			<Logo className='logo ' />
@@ -31,6 +32,7 @@ const Header = ({ currentUser }) => (
 			)}
 			<CartIcon />
 		</div>
+		<CartDropdown />
 	</div>
 );
 
