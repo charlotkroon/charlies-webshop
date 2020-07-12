@@ -1,11 +1,11 @@
 //libraries and dependecies
 import React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { auth, createUserProfileDocument } from './firebase/firebase.utils.js';
+import {Switch, Route, Redirect} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {auth, createUserProfileDocument} from './firebase/firebase.utils.js';
 
 //actions
-import { setCurrentUser } from './redux/user/user.actions';
+import {setCurrentUser} from './redux/user/user.actions';
 
 //pages and components
 import './App.css';
@@ -19,7 +19,7 @@ class App extends React.Component {
 	unsubscribeFromAuth = null;
 
 	componentDidMount() {
-		const { setCurrentUser } = this.props;
+		const {setCurrentUser} = this.props;
 		this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
 			if (userAuth) {
 				const userRef = await createUserProfileDocument(userAuth);
@@ -58,7 +58,7 @@ class App extends React.Component {
 	}
 }
 
-const mapStateToProps = ({ user }) => ({
+const mapStateToProps = ({user}) => ({
 	currentUser: user.currentUser,
 });
 

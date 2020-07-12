@@ -1,10 +1,10 @@
-//dependecies
 import React from 'react';
 import {connect} from 'react-redux';
+import {selectCartItems} from '../../redux/cart/cart.selectors';
 //components
-import './cart-dropdown.styles.scss';
 import CustomButton from '../custom-button/custom-button.component';
 import CartItem from '../cart-item/cart-item.component';
+import './cart-dropdown.styles.scss';
 
 const CartDropDown = ({cartItems}) => (
 	<div className='cart-dropdown'>
@@ -17,8 +17,8 @@ const CartDropDown = ({cartItems}) => (
 	</div>
 );
 
-const mapStateToProps = ({cart: {cartItems}}) => ({
-	cartItems,
+const mapStateToProps = (state) => ({
+	cartItems: selectCartItems,
 });
 
 export default connect(mapStateToProps)(CartDropDown);
