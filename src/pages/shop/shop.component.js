@@ -15,6 +15,11 @@ const CollectionsOverviewWithSpinner = WithSpinner(CollectionsOverview);
 const CollectionPageWithSpinner = WithSpinner(CollectionPage);
 
 class ShopPage extends React.Component {
+UNSAFE_componentWillMount()	{
+	
+}
+}
+
 	componentDidMount() {
 		const {fetchCollectionsStartAsync} = this.props;
 		fetchCollectionsStartAsync();
